@@ -1,0 +1,24 @@
+[init]
+	defaultBranch = main
+[merge]
+	tool = p4mergetool
+[mergetool "p4mergetool"]
+	cmd = " /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED"
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = p4mergetool
+[difftool "p4mergetool"]
+	cmd = " /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE"
+[alias]
+	slog = "log --pretty=\"%C(cyan)%h %C(red)%ar %C(brightyellow)%an %C(brightcyan)%s %C(yellow)%d\""
+	glog = "log --graph --pretty=\"%C(cyan)%h %C(red)%ar %C(brightyellow)%an %C(brightcyan)%s\""
+    pp = "pull --prune"
+    pf = "fetch --prune"
+    unstage = "restore --staged"
+    initsub = "submodule update --progress --init --recursive"
+    updatesub = "submodule update --progress --recursive"
+    deinitallsub = "submodule deinit --force --all"
+[core]
+	pager = 
