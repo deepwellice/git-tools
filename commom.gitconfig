@@ -1,0 +1,29 @@
+[init]
+    defaultBranch = main
+[alias]
+    slog = "log --pretty=\"%C(cyan)%h %C(red)%ar %C(brightyellow)%an %C(brightcyan)%s %C(yellow)%d\""
+    glog = "log --graph --pretty=\"%C(cyan)%h %C(red)%ar %C(brightyellow)%an %C(brightcyan)%s\""
+    pp = "pull --prune"
+    pf = "fetch --prune"
+    unstage = "restore --staged"
+    initsub = "submodule update --progress --init --recursive"
+    updatesub = "submodule update --progress --recursive"
+    deinitallsub = "submodule deinit --force --all"
+    dt = "difftool -y"
+    mt = "mergetool -y"
+    dts = "difftool -y --staged"
+    st = "status"
+[mergetool]
+    keepBackup = false
+[core]
+    autocrlf = true
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[fetch]
+    prune = true
+[color "branch"]
+    upstream = yellow
+
