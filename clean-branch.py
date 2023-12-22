@@ -5,21 +5,13 @@ import subprocess
 import re
 
 
-# class GitBranch:
-#     def __init__(self, branch_name, commit, local_path, remote_branch, remote_status):
-#         self.branch_name = branch_name
-#         self.commit = commit
-#         self.local_path = local_path
-#         self.remote_branch = remote_branch
-#         self.remote_status = remote_status
-#
-
 def clean(repo_path, deleted_remote=False, local_only=False, dry_run=True):
     os.chdir(repo_path)
 
     # Call external command 'git branch -vv' and get the command output
     cmd = 'git branch -vv'
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
+    print(output)
     # Split the output by line
     lines = output.split('\n')
     # Loop through each line
