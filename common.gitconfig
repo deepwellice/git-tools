@@ -13,6 +13,7 @@
     mt = "mergetool -y"
     dts = "difftool -y --staged"
     st = "status"
+    copr = "!f() { git fetch origin pull/\"$1\"/head:pr-\"$1\"; git checkout pr-\"$1\"; }; f"
 [mergetool]
     keepBackup = false
 [core]
